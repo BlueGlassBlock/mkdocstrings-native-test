@@ -1,0 +1,30 @@
+[build-system]
+requires = ["maturin>=0.14.16,<0.15"]
+build-backend = "maturin"
+
+[project]
+name = "async_trash"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "BlueGlassBlock", email = "blueglassblock@outlook.com"},
+]
+dependencies = []
+requires-python = ">=3.10"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+python-source = "python"
+module-name = "async_trash.core"
+
+[tool.pdm]
+[tool.pdm.dev-dependencies]
+docs = [
+    "mkdocs-material~=9.1",
+    "mkdocstrings[python]~=0.21",
+]
+dev = [
+    "maturin~=0.14",
+]
